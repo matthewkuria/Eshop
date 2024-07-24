@@ -851,7 +851,10 @@ textarea.input {
 /*----------------------------*\
 	product
 \*----------------------------*/
-
+.product-cards{
+  display: flex;
+  justify-content: center;
+}
 .product {
   position: relative;
   margin: 15px 0px;
@@ -1663,7 +1666,7 @@ textarea.input {
 }
 
 #product-tab .tab-nav li a:hover:after, #product-tab .tab-nav li a:focus:after, #product-tab .tab-nav li.active a:after {
-  width: 100%;
+  width: 50%;
 }
 
 /*-- Rating --*/
