@@ -10,6 +10,9 @@ class Products(models.Model):
 		max_length=250, default='', blank=True, null=True) 
 	image = models.ImageField(upload_to='uploads/products/') 
 
+	def __str__(self):
+		return self.name
+
 	@staticmethod
 	def get_products_by_id(ids): 
 		return Products.objects.filter(id__in=ids) 
