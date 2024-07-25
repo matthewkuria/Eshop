@@ -9,7 +9,7 @@ class Login(View):
 
 	def get(self, request): 
 		Login.return_url = request.GET.get('return_url') 
-		return render(request, 'login.html') 
+		return render(request, 'users/login.html') 
 
 	def post(self, request): 
 		email = request.POST.get('email') 
@@ -32,7 +32,7 @@ class Login(View):
 			error_message = 'Invalid !!'
 
 		print(email, password) 
-		return render(request, 'login.html', {'error': error_message}) 
+		return render(request, 'users/login.html', {'error': error_message}) 
 
 
 def logout(request): 
