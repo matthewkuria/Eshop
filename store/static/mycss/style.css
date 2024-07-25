@@ -456,7 +456,9 @@ textarea.input {
 .header-logo .logo img {
   display: block;
 }
-
+.header-logo .logo h1{
+  color: #fff;
+}
 /*----------------------------*\
 	Search
 \*----------------------------*/
