@@ -38,10 +38,22 @@
 						<li><a href="#"><i class="fa fa-phone"></i> +123456790</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> eshop@company.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> Eshop Plaza Road</a></li>
-					</ul>
+					</ul>					
 					<ul class="header-links pull-right">
+						{% if user.is_authenticated %}
+							<li class="greetings">Welcome back,{{user}}</li>
+						{% endif %}
 						<li><a href="#"><i class="fa fa-dollar"></i> Currency</a></li>
-						<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> My Account</a></li>
+						{% if user.is_authenticated %}
+						<li> 
+							<form method="post" action="{% url 'logout' %}">
+                            	{% csrf_token %}
+                            	<button class="btn " type="submit">logout</button>
+                        	</form>
+						</li>
+						{% else %}
+						<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i>My Account </a></li>
+						{% endif %}
 					</ul>
 				</div>
 			</div>

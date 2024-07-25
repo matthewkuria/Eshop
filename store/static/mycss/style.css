@@ -1,7 +1,4 @@
 /*
-Template Name: Electro - HTML Ecommerce Template
-Author: yaminncco
-
 Colors:
 	Body 		: #333
 	Headers 	: #2B2D42
@@ -457,6 +454,9 @@ textarea.input {
   display: block;
 }
 .header-logo .logo h1{
+  color: #fff;
+}
+.greetings{
   color: #fff;
 }
 /*----------------------------*\
