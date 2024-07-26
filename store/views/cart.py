@@ -20,7 +20,7 @@ def cart_detail(request):
         'cart': cart,
         'cart_items': cart_items,
     }
-    return render(request, 'store/index.html', context)
+    return render(request, 'store/cart_detail.html', context)
 
 @login_required
 def remove_from_cart(request, cart_item_id):

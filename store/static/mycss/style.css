@@ -619,7 +619,16 @@ textarea.input {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+.cart-items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+.cart-item{
+  padding: 10px;
+  align-items: center;
+}
 /*=========================================================
 	03 -> Navigation
 ===========================================================*/

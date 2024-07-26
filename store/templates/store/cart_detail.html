@@ -5,12 +5,13 @@
     <title>{{ product.name }}</title>
 {% endblock %}
 {% block content %}
-    <section class="cart_items">
+    <section >
     <h1>Your Shopping Cart</h1>
-    <div>
+    <div class="cart-items">
         {% for item in cart_items %}
-            <div>
+            <div class="cart-item" >
                 <h2>{{ item.product.name }}</h2>
+                <img src="{{item.product.image.url}}" alt="{{item.product.name}}" width="150">
                 <p>{{ item.product.description }}</p>
                 <p>Quantity: {{ item.quantity }}</p>
                 <p>Price: ${{ item.product.price }}</p>
