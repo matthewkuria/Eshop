@@ -4,8 +4,9 @@ from ..models.orders import Order
 from ..models.products import Products
 
 
-def Cart(View):
-    product = get_object_or_404(Products, id=product_id)
+@login_required
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
     order, created = Order.objects.get_or_create(customer=request.user.customer, complete=False)
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
     if not created:

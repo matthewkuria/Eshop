@@ -3,9 +3,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path 
 from .views.home import Index, store 
-from .views.signup import Signup 
 from .views.login import Login, logout 
-from .views.cart import Cart 
+from .views.cart import add_to_cart 
 from .views.checkout import CheckOut 
 from .views.orders import OrderView 
 from users import views as user_views
@@ -25,7 +24,7 @@ urlpatterns = [
     path('password-reset/done', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
 	 
-	path('cart', Cart, name='cart'), 
+	path('add_to_cart/<int:id>/', add_to_cart, name='cart'), 
 	path('check-out', CheckOut.as_view(), name='checkout'), 
 	path('orders', OrderView.as_view(), name='orders'), 
 
