@@ -10,7 +10,7 @@ def add_to_cart(request, product_id):
     if not created:
         cart_item.quantity += 1
     cart_item.save()
-    return redirect('cart_detail')
+    return redirect('homepage')
 
 @login_required
 def cart_detail(request):
@@ -20,7 +20,7 @@ def cart_detail(request):
         'cart': cart,
         'cart_items': cart_items,
     }
-    return render(request, 'store/cart_detail.html', context)
+    return render(request, 'store/index.html', context)
 
 @login_required
 def remove_from_cart(request, cart_item_id):

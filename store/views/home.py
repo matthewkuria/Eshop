@@ -48,21 +48,3 @@ def product_detail(request, product_id):
     context = {'product': product}
     return render(request, 'store/product_detail.html', context)
 
-# def store(request): 
-# 	cart = request.session.get('cart') 
-# 	if not cart: 
-# 		request.session['cart'] = {} 
-# 	products = None
-# 	categories = Category.get_all_categories() 
-# 	categoryID = request.GET.get('category') 
-# 	if categoryID: 
-# 		products = Products.get_all_products_by_categoryid(categoryID) 
-# 	else: 
-# 		products = Products.get_all_products() 
-
-# 	data = {} 
-# 	data['products'] = products 
-# 	data['categories'] = categories 
-
-# 	print('you are : ', request.session.get('email')) 
-# 	return render(request, 'store/index.html', data) 

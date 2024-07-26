@@ -544,54 +544,56 @@ textarea.input {
   display: none;
 }
 
-.cart-dropdown {
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
   position: absolute;
-  width: 300px;
-  background: #FFF;
-  padding: 15px;
-  -webkit-box-shadow: 0px 0px 0px 2px #E4E7ED;
-  box-shadow: 0px 0px 0px 2px #E4E7ED;
-  z-index: 99;
   right: 0;
-  opacity: 0;
-  visibility: hidden;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 99;
+ 
 }
 
-.dropdown.open>.cart-dropdown {
+.dropdown.open>.dropdown-content {
   opacity: 1;
   visibility: visible;
 }
 
-.cart-dropdown .cart-list {
+.dropdown-content .cart-list {
   max-height: 180px;
   overflow-y: scroll;
   margin-bottom: 15px;
 }
 
-.cart-dropdown .cart-list .product-widget {
+.dropdown-content .cart-list .product-widget {
   padding: 0px;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.cart-dropdown .cart-list .product-widget:last-child {
+.dropdown-content .cart-list .product-widget:last-child {
   margin-bottom: 0px;
 }
 
-.cart-dropdown .cart-list .product-widget .product-img {
+.dropdown-content .cart-list .product-widget .product-img {
   left: 0px;
   top: 0px;
 }
 
-.cart-dropdown .cart-list .product-widget .product-body .product-price {
+.dropdown-content .cart-list .product-widget .product-body .product-price {
   color: #2B2D42;
 }
 
-.cart-dropdown .cart-btns {
+.dropdown-content .cart-btns {
   margin: 0px -17px -17px;
 }
 
-.cart-dropdown .cart-btns>a {
+.dropdown-content .cart-btns>a {
   display: inline-block;
   width: calc(50% - 0px);
   padding: 12px;
@@ -603,16 +605,16 @@ textarea.input {
   transition: 0.2s all;
 }
 
-.cart-dropdown .cart-btns>a:first-child {
+.dropdown-content .cart-btns>a:first-child {
   margin-right: -4px;
   background-color: #1e1f29;
 }
 
-.cart-dropdown .cart-btns>a:hover {
+.dropdown-content .cart-btns>a:hover {
   opacity: 0.9;
 }
 
-.cart-dropdown .cart-summary {
+.dropdown-content .cart-summary {
   border-top: 1px solid #E4E7ED;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -1158,9 +1160,9 @@ textarea.input {
   text-align: center;
   font-size: 10px;
   padding: 0;
-  background: #1e1f29;
+  background: red;
   border: none;
-  color: #FFF;
+  color: #fff;
 }
 
 /*----------------------------*\
