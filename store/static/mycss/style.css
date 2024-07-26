@@ -854,6 +854,12 @@ textarea.input {
 /*----------------------------*\
 	product
 \*----------------------------*/
+.product_detail{
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
 .product-cards{
   display: flex;
   justify-content: center;

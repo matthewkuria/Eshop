@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path 
-from .views.home import Index, store 
+from .views.home import Index, store, product_detail
 from .views.login import Login, logout 
 from .views.cart import add_to_cart 
 from .views.checkout import CheckOut 
@@ -16,6 +16,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [ 
 	path('', Index.as_view(), name='homepage'), 
 	path('store', store, name='store'), 
+    path('product/<int:product_id>/', product_detail, name='product_detail'),
 	path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
@@ -24,7 +25,7 @@ urlpatterns = [
     path('password-reset/done', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
 	 
-	path('add_to_cart/<int:id>/', add_to_cart, name='cart'), 
+	path('add_to_cart/<int:product_id>/', add_to_cart, name='cart'), 
 	path('check-out', CheckOut.as_view(), name='checkout'), 
 	path('orders', OrderView.as_view(), name='orders'), 
 

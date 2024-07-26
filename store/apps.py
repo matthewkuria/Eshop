@@ -5,3 +5,6 @@ class StoreConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'store'
     # label = "store"
+
+    # def ready(self):
+    #     import store.signals
