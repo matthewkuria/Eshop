@@ -1,0 +1,28 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% load cart_tags %}
+{% block title %}
+    <title>{{ product.name }}</title>
+{% endblock %}
+{% block content %}
+    <section class="cart_items">
+    <h1>Your Shopping Cart</h1>
+    <div>
+        {% for item in cart_items %}
+            <div>
+                <h2>{{ item.product.name }}</h2>
+                <p>{{ item.product.description }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Price: ${{ item.product.price }}</p>
+                <p>Total: ${{ item.product.price|multiply:item.quantity }}</p>
+                <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Total: ${{ cart_items|sum_total }}</h2>
+        <a href="{% url 'checkout' %}">Checkout</a>
+    </div>
+    </section>
+{% endblock %}
+

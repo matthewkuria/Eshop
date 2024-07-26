@@ -37,9 +37,10 @@ class Index(View):
 		return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}') 
 
 
-def store(request):
+def store(request):	
     products = Products.objects.all()
-    context = {'products': products}
+    categories = Category.get_all_categories()	
+    context = {'products': products, 'categories': categories }
     return render(request, 'store/index.html', context)
 
 def product_detail(request, product_id):

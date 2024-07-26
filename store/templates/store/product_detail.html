@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}
+    <title>{{ product.name }}</title>
+{% endblock %}
+{% block content %}
+    <section class="product_detail">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <img src="{{product.image.url}}" alt="{{product.name}}" width="400" />
+        <p>{{product.category}}</p>
+        <p>{{ product.description }}</p>
+        <h4 class="product-price">${{ product.price }}</h4>
+    </section>
+{% endblock %}
