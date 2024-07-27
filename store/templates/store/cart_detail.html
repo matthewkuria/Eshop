@@ -17,6 +17,10 @@
                 <p>Price: ${{ item.product.price }}</p>
                 <p>Total: ${{ item.product.price|multiply:item.quantity }}</p>
                 <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+                <div class="product-add-subtract">
+                    <button>+</button>
+                    <button>-</button>
+                </div>
             </div>
         {% endfor %}
     </div>
