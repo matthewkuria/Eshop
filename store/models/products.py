@@ -8,7 +8,7 @@ class Products(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1) 
 	quantity = models.IntegerField(default=1)
 	description = models.CharField( 
-		max_length=250, default='', blank=True, null=True) 
+								max_length=250, default='', blank=True, null=True) 
 	image = models.ImageField(upload_to='uploads/products/') 
 
 	def __str__(self):
