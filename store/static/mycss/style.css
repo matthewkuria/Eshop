@@ -2107,6 +2107,11 @@ textarea.input {
 .content-section .form-group{
   width: 40vw;
 }
+.content-section .form-group legend{
+  color:rgb(39, 39, 186) ;
+  font-size: 3rem;
+  font-weight: bold;
+}
 .content-section .form-group .btn{
   background-color: rgb(39, 39, 186);
   color: #E4E7ED;
