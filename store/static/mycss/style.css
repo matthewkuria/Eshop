@@ -40,7 +40,7 @@ Table OF Contents
 9 > CHECKOUT PAGE
 10 > NEWSLETTER
 11 > FOOTER
-11 > SLICK STYLE
+11 > LOGIN
 12 > RESPONSIVE
 ------------------------------------*/
 
@@ -626,9 +626,25 @@ textarea.input {
   justify-content: center;
 
 }
+.cart-item .product-price{
+  display: block;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #D10024;
+}
 .cart-item{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   padding: 10px;
-  align-items: center;
+  max-width: 250px;
+}
+.cart-item .product-add-subtract{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  background: #2B2D42;
 }
 /*=========================================================
 	03 -> Navigation
@@ -2081,79 +2097,7 @@ textarea.input {
   display: block;
 }
 
-/*=========================================================
-	12 -> SLICK STYLE
-===========================================================*/
 
-/*----------------------------*\
-	Arrows
-\*----------------------------*/
-
-.slick-prev, .slick-next {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #E4E7ED;
-  background-color: #FFF;
-  border-radius: 50%;
-  z-index: 22;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
-  background-color: #D10024;
-  border-color: #D10024;
-}
-
-.slick-prev:before, .slick-next:before {
-  font-family: FontAwesome;
-  color: #2B2D42;
-}
-
-.slick-prev:before {
-  content: "\f104";
-}
-
-.slick-next:before {
-  content: "\f105";
-}
-
-.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
-  color: #FFF;
-}
-
-.slick-prev {
-  left: -20px;
-}
-
-.slick-next {
-  right: -20px;
-}
-
-/*----------------------------*\
-	Dots
-\*----------------------------*/
-
-.slick-dots li, .slick-dots li button, .slick-dots li button:before {
-  width: 10px;
-  height: 10px;
-}
-
-.slick-dots li button:before {
-  content: "";
-  opacity: 1;
-  background: #E4E7ED;
-  border-radius: 50%;
-}
-
-.slick-dots li.slick-active button:before {
-  background-color: #D10024;
-}
-
-.custom-dots .slick-dots {
-  position: static;
-  margin: 15px 0px;
-}
 
 /*=========================================================
 	13 -> RESPONSIVE
