@@ -2096,8 +2096,22 @@ textarea.input {
   font-size: 36px;
   display: block;
 }
-
-
+/*=========================================================
+	13 -> LOGIN
+===========================================================*/
+.content-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+.content-section .form-group{
+  max-width: 500px;
+}
+.content-section .form-group .btn{
+  background-color: rgb(39, 39, 186);
+  color: #E4E7ED;
+}
 
 /*=========================================================
 	13 -> RESPONSIVE
