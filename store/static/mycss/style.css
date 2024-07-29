@@ -2101,13 +2101,11 @@ textarea.input {
 ===========================================================*/
 .content-section{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   width: 100vw;
-  padding: 20px;
 }
 .content-section .form-group{
-  max-width: 500px;
+  width: 40vw;
 }
 .content-section .form-group .btn{
   background-color: rgb(39, 39, 186);
