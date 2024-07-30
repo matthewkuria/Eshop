@@ -10,34 +10,34 @@
 <body>
     
     <h1>Checkout</h1>
-    <div class="card">
-  <div class="card__front card__part">
-    <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-    <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-    <p class="card_numer">**** **** **** 6258</p>
-    <div class="card__space-75">
-      <span class="card__label">Card holder</span>
-      <p class="card__info">John Doe</p>
-    </div>
-    <div class="card__space-25">
-      <span class="card__label">Expires</span>
-            <p class="card__info">10/25</p>
-    </div>
-  </div>
-  
-  <div class="card__back card__part">
-    <div class="card__black-line"></div>
-    <div class="card__back-content">
-      <div class="card__secret">
-        <p class="card__secret--last">420</p>
-      </div>
-      <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-      <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-      
-    </div>
-  </div>
-  
-</div>
+     <main>
+        <svg width="100%" height="800">
+        <g class="coin1">
+            <circle cx="260" cy="220" r="35" fill="#ffd900"/>
+            <circle cx="260" cy="220" r="25" fill="#fff300"/>
+            <rect   x="255"  y="205"  width="10" height="30" fill="#ffd900"/>
+        </g>
+
+        <g class="coin2">
+            <circle cx="340" cy="230" r="35" fill="#ffd900"/>
+            <circle cx="340" cy="230" r="25" fill="#fff300"/>
+            <rect   x="335"  y="215"  width="10" height="30" fill="#ffd900"/>
+        </g>
+        <g class="coin3">
+            <circle cx="420" cy="240" r="35" fill="#ffd900"/>
+            <circle cx="420" cy="240" r="25" fill="#fff300"/>
+            <rect   x="415"  y="225"  width="10" height="30" fill="#ffd900"/>
+        </g>
+
+        <g class="credit-card">
+            <rect x="200" y="200" rx="25" ry="25" width="400" height="250" fill="#00a8ff"/>
+            <rect x="200" y="245" width="400" height="50" fill="#0b6fa2"/>
+            <rect x="210" y="320" width="270" height="25" fill="#e5e5e5"/>
+            <rect x="500" y="320" width="85"  height="25" fill="#e5e5e5"/>
+            <rect x="210" y="400" width="85"  height="25" fill="#e5e5e5"/>
+        </g>
+        </svg>
+    </main>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
