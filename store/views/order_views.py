@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from ..forms import CheckoutForm
+from django.contrib import messages
 from ..models.orders import Order, OrderItem
 from ..models.products import Products
 from ..models.customer import Customer
@@ -62,3 +64,50 @@ def cart_detail(request):
     items = order.orderitem_set.all()
     context = {'items': items, 'order': order}
     return render(request, 'store/cart_detail.html', context)
+
+@login_required
+def checkout(request):
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    items = order.orderitem_set.all()
+
+    if request.method == 'POST':
+        form = CheckoutForm(request.POST)
+        if form.is_valid():
+            # Process payment (this is just a placeholder, integrate with a real payment gateway)
+            payment_method = form.cleaned_data.get('payment_method')
+            if payment_method == 'card':
+                card_number = form.cleaned_data.get('card_number')
+                expiry_date = form.cleaned_data.get('expiry_date')
+                cvv = form.cleaned_data.get('cvv')
+                # Process card payment (add your payment gateway integration here)
+            elif payment_method == 'paypal':
+                # Process PayPal payment (add your PayPal integration here)
+                pass
+
+            # Create order
+            order.address = form.cleaned_data.get('address')
+            order.city = form.cleaned_data.get('city')
+            order.state = form.cleaned_data.get('state')
+            order.zip_code = form.cleaned_data.get('zip_code')
+            order.complete = True
+            order.save()
+
+            # Clear cart
+            items.delete()
+
+            messages.success(request, 'Your order has been placed successfully!')
+            return redirect('order_confirmation')
+    else:
+        form = CheckoutForm()
+
+    context = {
+        'items': items,
+        'order': order,
+        'form': form,
+    }
+    return render(request, 'store/checkout.html', context)
+    
+@login_required
+def order_confirmation(request):
+    return render(request, 'order_confirmation.html')
