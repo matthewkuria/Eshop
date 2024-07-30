@@ -630,7 +630,11 @@ textarea.input {
   font-size: 16px; 
   color: #D10024;
 }
-
+.cart-item .remove{
+background-color: #D10024;
+color: #f1f1f1;
+outline: none;
+}
 
 .cart-item .product-add-subtract{
   display: flex;
