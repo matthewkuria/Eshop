@@ -1,1 +1,29 @@
-My Eshop Project
+##My Eshop ecommerce Project
+
+#Contributing
+Contributions are welcome! Please create an issue or submit a pull request for any changes.
+
+#Steps to contribute
+Fork the repository.
+Create a new branch.
+Make your changes.
+Test your changes.
+Submit a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+##Acknowledgements
+Django Documentation
+Bootstrap
+Stripe
+Contact
+For any inquiries, please contact mathewkwachira@gmail.com.
+
+This README file covers the basic setup, usage, project structure, and contribution guidelines for your Django e-commerce project. Make sure to update specific details such as the repository URL, database settings, and contact information accordingly.
+
+
+
+
+
+
+
