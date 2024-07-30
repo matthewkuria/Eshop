@@ -1,1 +1,50 @@
-My Eshop Project
+##My Eshop ecommerce Project
+#Overview
+This is a Django-based e-commerce web application designed to provide a platform for buying and selling products online. It includes features such as user authentication, product listings, shopping cart, order management, and payment processing.
+
+#Features
+User authentication and profile management
+Product catalog with categories and search functionality
+Shopping cart and checkout process
+Order management for customers and administrators
+Payment gateway integration
+Responsive design for mobile and desktop
+
+#Project Structure
+ecommerce/ - Main project directory.
+ecommerce/settings.py - Project settings.
+ecommerce/urls.py - URL declarations.
+ecommerce/wsgi.py - WSGI configuration.
+products/ - App for managing products.
+orders/ - App for managing orders and cart.
+users/ - App for user authentication and profile management.
+templates/ - HTML templates for the project.
+static/ - Static files (CSS, JavaScript, images).
+
+#Contributing
+Contributions are welcome! Please create an issue or submit a pull request for any changes.
+
+#Steps to contribute
+Fork the repository.
+Create a new branch.
+Make your changes.
+Test your changes.
+Submit a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+##Acknowledgements
+Django Documentation
+Bootstrap
+Stripe
+Contact
+For any inquiries, please contact mathewkwachira@gmail.com.
+
+
+
+
+
+
+
+
+
