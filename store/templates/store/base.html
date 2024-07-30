@@ -123,12 +123,12 @@ padding: 12px;}
 										<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 											<i class="fa fa-shopping-cart"></i>
 											<span>Your Cart</span>
-											<div class="qty">{{cart_items.count}}</div>
+											<div class="qty">{{items.count}}</div>
 										</a>
 									</button>
 									<div class="dropdown-content" id="myDropdown">
 										<div class="cart-list">
-											{% for item in order_items %}
+											{% for item in items %}
 											<div class="product-widget">
 												<div class="product-img">
 													<img src="{{item.product.image.url}}" alt="{{item.product.name}}">
@@ -137,16 +137,16 @@ padding: 12px;}
 													<h3 class="product-name"><a href="{% url 'product_detail' item.product.id %}">{{item.product.name}}</a></h3>
 													<h4 class="product-price"><span class="qty">{{item.quantity}}</span>${{item.product.price}}</h4>
 												</div>
-												<a href="{% url 'remove_from_cart' item.id %}"><button class="delete">X</button></a>
+												<a href="{% url 'remove_from_cart' item.product_id %}"><button class="delete">X</button></a>
 											</div>
 											{% endfor %}											
 										</div>
 										<div class="cart-summary">
-											<small>{{order_items.count}} selected</small>
-											<h5>SUBTOTAL: {{ item.product.price }}</h5>
+											<small>{{items.count}} selected</small>
+											<h5>SUBTOTAL: {{ item.total }}</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="{% url 'order_detail' %}">Edit Cart</a>
+											<a href="{% url 'cart_detail' %}">Edit Cart</a>
 											<a href="#">Checkout<i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>

@@ -627,19 +627,10 @@ textarea.input {
 
 }
 .cart-item .product-price{
-  display: block;
-  font-size: 24px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  font-size: 16px; 
   color: #D10024;
 }
-.cart-item{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 10px;
-  max-width: 250px;
-}
+
 .cart-item .product-add-subtract{
   display: flex;
   flex-direction: row-reverse;

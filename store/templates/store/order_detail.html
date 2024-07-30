@@ -18,8 +18,14 @@
                 <p class="product-price">Total: ${{ item.product.price|multiply:item.quantity }}</p>
                 <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
                 <div class="product-add-subtract">
-                    <button onclick="">+</button>
-                    <button>-</button>
+                    <form method="post" action="{% url 'subtract_from_cart' item.product.id %}">
+                        {% csrf_token %}
+                        <button type="submit">-</button>
+                    </form>
+                    <form method="post" action="{% url 'add_to_cart' item.product.id %}">
+                        {% csrf_token %}
+                        <button type="submit">+</button>
+                    </form>                    
                 </div>
             </div>
         {% endfor %}

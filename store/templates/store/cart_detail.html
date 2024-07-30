@@ -1,0 +1,46 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}
+    <title>{{ product.name }}</title>
+{% endblock %}
+{% block content %}
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-items">        
+        <table class="cart-item">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td class="product-price">${{ item.product.price }}</td>
+                    <td>${{ item.get_total }}</td>
+                    <td>
+                        <form method="post" action="{% url 'add_to_cart' item.product.id %}">
+                            {% csrf_token %}
+                            <button type="submit">+</button>
+                        </form>
+                        <form method="post" action="{% url 'subtract_from_cart' item.product.id %}">
+                            {% csrf_token %}
+                            <button type="submit">-</button>
+                        </form>
+                        <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </div>
+    <h2>Total: ${{ order.get_cart_total }}</h2>
+{% endblock %}

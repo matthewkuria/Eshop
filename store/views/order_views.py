@@ -6,8 +6,7 @@ from ..models.customer import Customer
 
 @login_required
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Products, id=product_id)
-    
+    product = get_object_or_404(Products, id=product_id)    
     try:
         customer = request.user.customer  # Access the related Customer instance
     except Customer.DoesNotExist:
@@ -20,7 +19,7 @@ def add_to_cart(request, product_id):
     if not created:
         order_item.quantity += 1
     order_item.save()
-    return redirect('order_detail')
+    return redirect('cart_detail')
 
 @login_required
 def order_detail(request):
@@ -32,4 +31,34 @@ def order_detail(request):
 def remove_from_cart(request, order_item_id):
     order_item = get_object_or_404(OrderItem, id=order_item_id)
     order_item.delete()
-    return redirect('order_detail')
+    return redirect('cart_detail')
+
+@login_required
+def subtract_from_cart(request, product_id):
+    product = get_object_or_404(Products, id=product_id)
+    customer = request.user.customer
+    order = get_object_or_404(Order, customer=customer, complete=False)
+    order_item = get_object_or_404(OrderItem, order=order, product=product)
+    if order_item.quantity > 1:
+        order_item.quantity -= 1
+        order_item.save()
+    else:
+        order_item.delete()
+    return redirect('cart_detail')
+
+@login_required
+def remove_from_cart(request, product_id):
+    product = get_object_or_404(Products, id=product_id)
+    customer = request.user.customer
+    order = get_object_or_404(Order, customer=customer, complete=False)
+    order_item = get_object_or_404(OrderItem, order=order, product=product)
+    order_item.delete()
+    return redirect('cart_detail')
+
+@login_required
+def cart_detail(request):
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    items = order.orderitem_set.all()
+    context = {'items': items, 'order': order}
+    return render(request, 'store/cart_detail.html', context)

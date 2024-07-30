@@ -6,12 +6,10 @@ from .views.home import Index, store, product_detail
 from .views.product_views import product_list
 from .views.customer_views import customer_profile
 from .views.login import Login, logout 
-from .views.order_views import add_to_cart, order_detail, remove_from_cart
+from .views.order_views import cart_detail, add_to_cart, subtract_from_cart, order_detail, remove_from_cart
 from .views.checkout import CheckOut 
 from users import views as user_views
 from django.contrib.auth import views as auth_views
-
-# from .middlewares.auth import auth_middleware 
 
 
 urlpatterns = [ 
@@ -24,9 +22,10 @@ urlpatterns = [
     path('products/', product_list, name='product_list'),
     path('products/<int:product_id>/', product_detail, name='product_detail'),
     path('profile/', customer_profile, name='customer_profile'),
-    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
-    path('cart/', order_detail, name='order_detail'),
-    path('remove_from_cart/<int:order_item_id>/', remove_from_cart, name='remove_from_cart'),
+    path('cart/', cart_detail, name='cart_detail'),
+    path('cart/add/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path('cart/subtract/<int:product_id>/', subtract_from_cart, name='subtract_from_cart'),
+    path('cart/remove/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
 
     # Registration urls
 	path('register/', user_views.register, name='register'),
