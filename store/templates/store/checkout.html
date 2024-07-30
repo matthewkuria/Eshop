@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <h2>Order Summary</h2>
+        <ul>
+            {% for item in items %}
+            <li>{{ item.product.name }} (x{{ item.quantity }}) - ${{ item.get_total }}</li>
+            {% endfor %}
+        </ul>
+        <h2>Total: ${{ order.get_cart_total }}</h2>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>
