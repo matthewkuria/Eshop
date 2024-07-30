@@ -18,8 +18,6 @@ urlpatterns = [
 	path('', Index.as_view(), name='homepage'), 
 	path('store', store, name='store'), 
     path('product/<int:product_id>/', product_detail, name='product_detail'),    
-    path('add_to_cart/<int:product_id>/', add_to_cart, name='cart'),
-    path('remove_from_cart/<int:cart_item_id>/',remove_from_cart, name='remove_from_cart'), 
 	path('check-out', CheckOut.as_view(), name='checkout'), 
 
     # 

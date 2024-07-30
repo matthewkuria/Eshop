@@ -6,5 +6,5 @@ class StoreConfig(AppConfig):
     name = 'store'
     # label = "store"
 
-    # def ready(self):
-    #     import store.signals
+    def ready(self):
+        import store.signals

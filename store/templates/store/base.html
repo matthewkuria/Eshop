@@ -128,7 +128,7 @@ padding: 12px;}
 									</button>
 									<div class="dropdown-content" id="myDropdown">
 										<div class="cart-list">
-											{% for item in cart_items %}
+											{% for item in order_items %}
 											<div class="product-widget">
 												<div class="product-img">
 													<img src="{{item.product.image.url}}" alt="{{item.product.name}}">
@@ -142,7 +142,7 @@ padding: 12px;}
 											{% endfor %}											
 										</div>
 										<div class="cart-summary">
-											<small>{{cart_items.count}} selected</small>
+											<small>{{order_items.count}} selected</small>
 											<h5>SUBTOTAL: {{ item.product.price }}</h5>
 										</div>
 										<div class="cart-btns">
