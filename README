@@ -1,4 +1,14 @@
 ##My Eshop ecommerce Project
+#Overview
+This is a Django-based e-commerce web application designed to provide a platform for buying and selling products online. It includes features such as user authentication, product listings, shopping cart, order management, and payment processing.
+
+#Features
+User authentication and profile management
+Product catalog with categories and search functionality
+Shopping cart and checkout process
+Order management for customers and administrators
+Payment gateway integration
+Responsive design for mobile and desktop
 
 #Project Structure
 ecommerce/ - Main project directory.
