@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path 
-from .views.home import Index, store, product_detail
+from .views.home import Index, store, product_detail, search
 from .views.product_views import product_list
 from .views.customer_views import customer_profile
 from .views.login import Login, logout 
@@ -28,6 +28,7 @@ urlpatterns = [
     path('cart/remove/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
     path('checkout/', checkout, name='checkout'),
     path('order_confirmation/', order_confirmation, name='order_confirmation'),
+    path('search/', search, name='search'),
 
     # Registration urls
 	path('register/', user_views.register, name='register'),

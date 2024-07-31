@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from ..models.products import Products 
 from ..models.category import Category 
 from django.views import View 
+from ..forms import SearchForm
 
 
-# Create your views here. 
 class Index(View): 
 
 	def post(self, request): 
@@ -48,3 +48,16 @@ def product_detail(request, product_id):
     context = {'product': product}
     return render(request, 'store/product_detail.html', context)
 
+
+def search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Products.objects.filter(name__icontains=query)  # Adjust the filter as needed
+
+    return render(request, 'store/search_results.html', {'form': form, 'query': query, 'results': results})
