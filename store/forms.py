@@ -9,3 +9,5 @@ class CheckoutForm(forms.Form):
     card_number = forms.CharField(max_length=16, required=False)
     expiry_date = forms.CharField(max_length=5, required=False)
     cvv = forms.CharField(max_length=3, required=False)
+class SearchForm(forms.Form):
+    query = forms.CharField(max_length=100, label='Search')
