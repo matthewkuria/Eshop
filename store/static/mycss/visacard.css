@@ -1,0 +1,71 @@
+.credit-card {
+
+  animation: slide 3s infinite;
+}
+.coin1 {
+  animation: drop 3s infinite;
+}
+
+.coin2 {
+  animation: drop 6s infinite;
+}
+.coin3 {
+  animation: drop 8s infinite;
+}
+@keyframes drop {
+  0% {
+    transform: translate3d(50px, 50px, 0px);
+  }
+  50% {
+    transform: translate3d(25px, 500px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, 800px, 0px);
+
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translate3d(0%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+  10% {
+    transform: translate3d(10%, 90px, 0px);
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: translate3d(20%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+  30% {
+    transform: translate3d(30%, 90px, 0px);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: translate3d(40%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(50%, 90px, 0px);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translate3d(60%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+  70% {
+    transform: translate3d(70%, 90px, 0px);
+}
+  80% {
+    transform: translate3d(80%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translate3d(90%, 90px, 0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(100%, 40px, 0px);
+    animation-timing-function: ease-in;
+  }
+}
