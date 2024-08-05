@@ -96,8 +96,10 @@ padding: 12px;}
 										{% endfor %}					
 										
 									</select>
-									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
+									 <form method="get" action="{% url 'product_list' %}">
+										<input class="input" type="text" name="query" placeholder="Search products...">
+										<button class="search-btn" type="submit">Search</button>
+									</form>									
 								</form>
 							</div>
 						</div>

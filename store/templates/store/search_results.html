@@ -1,0 +1,21 @@
+
+{% block content %}
+  <h1>Search</h1>
+  <form method="get" action="{% url 'search' %}">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+
+  {% if query %}
+    <h2>Results for "{{ query }}":</h2>
+    <ul>
+      {% for product in results %}
+        <li>
+          <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+        </li>
+      {% empty %}
+        <li>No results found.</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

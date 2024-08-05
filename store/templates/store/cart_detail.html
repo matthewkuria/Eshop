@@ -26,11 +26,11 @@
                     <td>
                         <form method="post" action="{% url 'add_to_cart' item.product.id %}">
                             {% csrf_token %}
-                            <button type="submit">+</button>
+                            <button type="submit" class="btn-add">+</button>
                         </form>
                         <form method="post" action="{% url 'subtract_from_cart' item.product.id %}">
                             {% csrf_token %}
-                            <button type="submit">-</button>
+                            <button type="submit" class="btn-subtract">-</button>
                         </form>
                         <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
                             {% csrf_token %}
@@ -43,4 +43,5 @@
         </table>        
     </div>
     <h2>Total: ${{ order.get_cart_total }}</h2>
+    <a href="{% url 'checkout' %}">Checkout</a>
 {% endblock %}

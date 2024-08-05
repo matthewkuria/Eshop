@@ -620,6 +620,10 @@ textarea.input {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+/* =======================================================
+--> Cart Items
+==========================================================
+*/
 .cart-items{
   display: flex;
   align-items: center;
@@ -641,6 +645,18 @@ outline: none;
   flex-direction: row-reverse;
   justify-content: space-around;
   background: #2B2D42;
+}
+.cart-item .btn-add{
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  color: white;
+}
+.cart-item .btn-subtract{
+  background-color: yellow;
+  border: white;
+  border-radius: 15px;
+  padding: 4px 8px;
 }
 /*=========================================================
 	03 -> Navigation
